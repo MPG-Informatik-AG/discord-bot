@@ -13,7 +13,6 @@ export async function getTimetable() {
             }
             sortedByTime[a.startTime].push(a)
         }
-
         return sortedByTime;
     })
 }

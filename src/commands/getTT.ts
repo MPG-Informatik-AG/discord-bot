@@ -12,7 +12,12 @@ export const getTT: Command = {
         let tt = await getTimetable()
 
         const content = times.map(time => {
-            return `\`${time}: ${tt[time]?.map(lesson => lesson.sg).join(" ") || " -"}\``
+            return `${time}: ${tt[time]?.map(lesson => {
+                if (lesson.code == "cancelled") {
+                    return `~~${lesson.sg}~~`
+                }
+                return lesson.sg
+            }).join(" ") || " -"}`
         }).join("\n")
 
         await interaction.followUp({
