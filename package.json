@@ -3,6 +3,7 @@
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.40",
     "@types/node": "^18.15.5",
     "discord.js": "^14.7.1",
     "ts-node": "^10.9.1",
